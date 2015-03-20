@@ -1,0 +1,326 @@
+\everymath{\displaystyle}
+%\documentclass[pdftex,a4paper]{article}
+\documentclass[a4paper]{article}
+%%classes: article, report, book, proc, amsproc
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Misc
+% para acertar os acentos
+\usepackage[brazilian]{babel} 
+%\usepackage[portuguese]{babel} 
+% \usepackage[english]{babel}
+% \usepackage[T1]{fontenc}
+% \usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{fullpage}
+% \usepackage{graphicx} %See PDF section
+\usepackage{multicol}
+\setlength{\columnseprule}{0.5pt}
+\setlength{\columnsep}{20pt}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% PDF support
+
+\usepackage[pdftex]{color,graphicx}
+% %% Hyper-refs
+\usepackage[pdftex]{hyperref} % for printing
+% \usepackage[pdftex,bookmarks,colorlinks]{hyperref} % for screen
+
+%% \newif\ifPDF
+%% \ifx\pdfoutput\undefined\PDFfalse
+%% \else\ifnum\pdfoutput > 0\PDFtrue
+%%      \else\PDFfalse
+%%      \fi
+%% \fi
+
+%% \ifPDF
+%%   \usepackage[T1]{fontenc}
+%%   \usepackage{aeguill}
+%%   \usepackage[pdftex]{graphicx,color}
+%%   \usepackage[pdftex]{hyperref}
+%% \else
+%%   \usepackage[T1]{fontenc}
+%%   \usepackage[dvips]{graphicx}
+%%   \usepackage[dvips]{hyperref}
+%% \fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Math
+\usepackage{amsmath,amsfonts,amssymb}
+% para usar R de Real do jeito que o povo gosta
+\usepackage{amsfonts} % \mathbb
+% para usar as letras frescas como L de Espaco das Transf Lineares
+% \usepackage{mathrsfs} % \mathscr
+
+% Oferecer seno e tangente em pt, com os comandos usuais.
+\providecommand{\sin}{} \renewcommand{\sin}{\hspace{2pt}\mathrm{sen}}
+\providecommand{\tan}{} \renewcommand{\tan}{\hspace{2pt}\mathrm{tg}}
+
+% dt of integrals = \ud t
+\newcommand{\ud}{\mathrm{\ d}}
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Título e cabeçalho
+%\noindent\parbox[c]{.15\textwidth}{\includegraphics[width=.15\textwidth]{logo}}\hfill
+\parbox[c]{.825\textwidth}{\raggedright%
+  \sffamily {\LARGE
+
+Estatística: Análise Descritiva
+
+\par\bigskip}
+{Prof: Felipe Figueiredo\par}
+{\url{http://sites.google.com/site/proffelipefigueiredo}}
+
+\vspace{1cm}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Formulário}
+
+
+Amplitude dos dados:
+\begin{displaymath}
+  A = x_\text{max} - x_\text{min}
+\end{displaymath}
+
+Parâmetros e estatísticas:
+\begin{center}
+  \begin{tabular}[!h]{|c|c|c|}
+    \hline
+     & População ($N$) & Amostra ($n$) \\
+    \hline
+    Média & $\mu = \frac{\sum_{i=1}^N x_i}{N}$ & $\bar{x} = \sum_{i=1}^n
+    \frac{x_i}{n}$\\
+    \hline
+    Variância & $\sigma^2 = \sum_{i=1}^N \frac{(x_i - \mu)^2}{N}$& $s^2 = \sum_{i=1}^n \frac{(x_i - \bar{x})^2}{n-1}$
+    \\
+    \hline
+    Desvio padrão & $\sigma = \sqrt{\sigma^2}$& $s = \sqrt{s^2}$\\
+    \hline
+  \end{tabular}
+\end{center}
+
+
+% Média de uma população:
+% \begin{displaymath}
+%   \mu = \sum_{i=1}^N \frac{x_i}{N}
+% \end{displaymath}
+
+% Variância de uma população:
+% \begin{displaymath}
+%   \sigma^2 = \sum_{i=1}^N \frac{(x_i - \mu)^2}{N}
+% \end{displaymath}
+
+% Desvio padrão de uma população de tamanho $N$:
+% \begin{displaymath}
+%   \sigma = \sqrt{\sigma^2}
+% \end{displaymath}
+
+Fórmula alternativa da variância populacional:
+\begin{displaymath}
+  \sigma^2 = \frac{\sum x_i^2}{N} - \mu^2
+\end{displaymath}
+
+% Média de uma amostra de tamanho $n$:
+% \begin{displaymath}
+%   \bar{x} = \sum_{i=1}^n \frac{x_i}{n}
+% \end{displaymath}
+
+% Variância de uma amostra:
+% \begin{displaymath}
+%   s^2 = \sum_{i=1}^n \frac{(x_i - \bar{x})^2}{n-1}
+% \end{displaymath}
+
+% Desvio padrão de uma amostra:
+% \begin{displaymath}
+%   s = \sqrt{s^2}
+% \end{displaymath}
+
+Coeficiente de Variação (assumindo $\mu > 0$):
+\begin{displaymath}
+  CV = \frac{\sigma}{\mu}
+\end{displaymath}
+
+
+
+\section{Exercícios}
+
+\begin{enumerate}
+\item Classifique as seguintes variáveis:
+  \begin{enumerate}
+  \item Sexo
+  \item Idade
+  \item Altura (cm)
+  \item Cor da pele
+  \item Fumante (Sim ou Não)
+  \item Número de cigarros por dia
+  \item Cargo (emprego)
+  \item Pressão arterial sistólica (mmHg)
+  \item Pressão arterial diastólica (mmHg)
+  \item Contagem de hemáceas
+  \item Peso (kg)
+  \item Temperatura ($^0$C)
+  \item Quantidade de filhos
+  \end{enumerate}
+
+\item Calcule a média, mediana e moda (se houver) das seguintes populações:
+
+  \begin{enumerate}
+  \item $\{0\}$
+  \item $\{1,2,3\}$
+  \item $\{1,2,3,2\}$
+  \item $\{5,5,10\}$
+  \item $\{5,5,20\}$
+  \item $\{5,5,-20\}$
+  \item $\{-2,2,1,2,-3\}$
+  \item $\{-1,2,2,1,2\}$
+  \item $\{\frac{1}{2},-2,-3,\frac{1}{2},-\frac{1}{2},1,0,-\frac{1}{2}\}$
+  \item $\{-\frac{1}{4},\frac{1}{2}\}$
+  \item $\{\frac{1}{2},\frac{1}{3},\frac{1}{2}\}$
+  \item $\{\frac{1}{2},2,\frac{1}{3},3,\frac{1}{6},6\}$
+  \item $\{1,2,1,1,40\}$
+  \end{enumerate}
+
+\item Calcule a variância, desvio padrão e o coeficiente de variação
+  (quando possível) das populações do exercício anterior.
+
+\section{Problemas}
+
+
+\item (Fonte: Sala dos professores) Os tamanhos de pé de alguns homens
+  e mulheres foram coletados e são fornecidos abaixo.
+
+  Homens $=\{42,40,42,41,41,40,40,42,43,42\}$
+
+  Mulheres $=\{37,37,37,37,37,39,37,38,36,38\}$
+
+  \begin{enumerate}
+  \item Complete a tabela de frequências abaixo utilizando os dados
+    como classes unitárias.
+
+  \begin{center}
+  \begin{tabular}[h]{|c|c|c|c|}
+    \hline
+    $x_i$ & $F_i$ & $f_i$ & Frequência acumulada\\
+    \hline
+    &&&\\
+    \hline
+    \ldots&&&\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\item Calcule a média e o desvio padrão dos dados para homens e mulheres.
+
+\item Calcule a média e o desvio padrão dos dados sem distinção de sexo.
+
+\item (Desafio) Qual é a relação entre os resultados dos itens (b) e (c)?
+
+\end{enumerate}
+
+
+\item (Fonte: Sala dos professores) As alturas (em cm) de alguns
+  homens e mulheres foram coletados e são fornecidos abaixo. 
+
+  Homens $=\{178,163,170,175,175,174,171,182,190,176\}$
+
+  Mulheres $=\{170,158,165,165,169,173,168,172,162,165\}$
+
+
+  \begin{enumerate}
+  \item Complete a tabela de frequências utilizando classes de alturas
+    com amplitude 5cm. Defina a primeira classe começando em 160cm
+    para homens, e 155cm para mulheres.
+
+  \begin{center}
+  \begin{tabular}[h]{|c|c|c|c|c|}
+    \hline
+    Classe & Ponto médio ($x_i$) & $F_i$ & $f_i$ & Frequência acumulada\\
+    \hline
+    &&&&\\
+    \hline
+    \ldots &&&&\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\item Calcule a média das frequências das classes para homens e mulheres.
+
+\item Calcule a média dos dados para homens e mulheres.
+
+\item Calcule a média dos dados sem distinção de sexo.
+\item (Desafio) Qual é a relação entre os resultados dos itens (c) e (d)?
+  \end{enumerate}
+
+\item (Fonte: IBEIA) O MEC determina se uma Instituição de Ensino
+  Superior (IES) deve ser credenciada se atingir uma certa média de
+  avaliação, ponderadas com pesos pré-estabelecidos. Considere as
+  notas obtidas por uma determinada IES conforme os critérios
+  objetivos:
+
+  \begin{center}
+    \begin{tabular}[h]{|c|c|c|}
+      \hline
+      Critério & Nota & Peso\\
+      \hline
+      Projeto Pedagógico & 1 & 0.3\\
+      \hline
+      Titulação do corpo docente & 3 & 0.2 \\
+      \hline
+      Nota no ENADE &  2 & 0.3\\
+      \hline
+      Estrutura &  3 & 0.2\\
+      \hline
+    \end{tabular}
+  \end{center}
+
+  \begin{enumerate}
+  \item Calcule a média da instituição com as notas e pesos
+    apresentados na tabela.
+  \item Se a nota do ENADE diminuir para 1, qual será a nova média?
+  \item Sabendo que se a média institucional for menor que 2, a mesma
+    pode ser descredenciada pelo MEC, compare as respostas dos itens
+    (a) e (b) e discuta com seus colegas o significado disso. E estude
+    muito.
+  \end{enumerate}
+  
+% \item Uma clínica oncológica registrou o tempo (em meses) entre a
+%   remissão de um certo tipo de câncer e a recidiva de 48 pacientes. Os
+%   dados foram ordenados e são apresentados na tabela abaixo, para
+%   homens e mulheres.
+
+%   Mulheres $=\{2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 7, 7, 8, 8, 8,
+%   8,10, 10, 11, 11, 12, 18\}$
+
+%   Homens $=\{2, 2, 3, 4, 4, 4, 4, 7, 7, 7, 8, 9, 9, 10, 12, 15, 15,
+%   15, 16, 16, 18, 18, 22, 22, 24\}$
+
+%   \begin{enumerate}
+%   \item Calcule a média, o desvio-padrão, a mediana e o coeficiente de
+%     variação para cada sexo.
+%   \item Faça os mesmos cálculos acima para todos os pacientes, sem
+%     distinção de sexo.
+%   \end{enumerate}
+
+\item (Desafio) O que acontece com a média e com a variância se:
+  \begin{enumerate}
+  \item o mesmo número é somado a todos os elementos de um conjunto de dados?
+  \item o mesmo número é multiplicado por todos os elementos de um
+    conjunto de dados?
+  \end{enumerate}
+
+\end{enumerate}
+
+\end{document}
