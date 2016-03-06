@@ -220,3 +220,4 @@ sympy-plots-for-*.tex/
 ## Emacs temp files (philsf)
 **/auto/
 *~
+.Rproj.user
