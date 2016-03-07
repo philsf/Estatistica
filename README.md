@@ -1,4 +1,4 @@
-# Estatistica
+# Estatística
 
 Este é o repositório da Disciplina Estatística do professor Felipe Figueiredo.
 
