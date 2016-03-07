@@ -19,10 +19,13 @@ Abaixo estão indicadas as seções do livro texto utilizadas em cada aula. A re
 
 ## Listas de exercícios e problemas
 
-- Introdução à estatística: Seção 1.1 (1-38), e 1.2 (1-24). (Obs: use a classificação dos tipos de dados vista em sala, e não a do livro texto).
-- Distribuição de Frequências e Gráficos: 2.1 (1-42).
-- Medidas de Tendência Central: 2.3 ().
-- Medidas de Variação: 2.4 ().
+- [Introdução à estatística][] (versão 20160306).
+- [Distribuição de Frequências e Gráficos][] (versão 20160306).
+- Medidas de Tendência Central
+- Medidas de Variação
+
+[Introdução à estatística]: Listas/Estatistica-lista-intro.pdf
+[Distribuição de Frequências e Gráficos]: Listas/Estatistica-lista-Frequencias.pdf
 
 ## Trabalhos
 
