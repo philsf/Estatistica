@@ -35,3 +35,5 @@ Livro texto da disciplina.
 
 - (PLT) LARSON, Ron; FARBER, Betsy. _Estatística aplicada_. 4a ed. São Paulo: Pearson, 2010.
 
+## Licença
+Todo o material contido aqui é distribuído sob a licença [Creative Commons Atribuição](http://creativecommons.org/licenses/by/4.0/deed.pt_BR)
