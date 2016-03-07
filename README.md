@@ -10,12 +10,20 @@ Apresentar aos alunos os princípios da Estatística e da análise de dados, par
 
 ## Planejamento de aulas de conteúdo
 
+As aulas seguirão diretamente os contéudos (e alguns exemplos) do livro texto, de acordo com os conteúdos determinados nas Aulas Modelos do KLS. Assim sendo, diversos tópicos (e exercícios) do livro serão pulados.
+
 Abaixo estão indicadas as seções do livro texto utilizadas em cada aula. A referência do livro texto está na seção **Bibliografia**.
 
-- Introdução à estatística (Seções **1.1** e parte da **1.2**), Distribuição de Frequências (**2.1**).
-- Distribuição de Frequências e Gráficos (**2.1** e **2.2**).
-- Medidas de Tendência Central (**2.3**) e Medidas de Variação (**2.4**).
-- Medidas de Variação (**2.4**) e Medidas de Posição (**2.5**).
+### Primeiro bimestre (B1)
+
+1. Introdução à estatística (Seções **1.1** e parte da **1.2**), Distribuição de Frequências (**2.1**).
+1. Distribuição de Frequências e Gráficos (**2.1** e **2.2**).
+1. Medidas de Tendência Central (**2.3**) e Medidas de Variação (**2.4**).
+1. Medidas de Variação (**2.4**) e Medidas de Posição (**2.5**).
+
+### Segundo bimestre (B2)
+
+1. 
 
 ## Listas de exercícios e problemas
 
