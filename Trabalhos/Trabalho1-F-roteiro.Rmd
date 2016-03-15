@@ -1,0 +1,55 @@
+---
+title: "Trabalho 1"
+author: "Felipe Figueiredo"
+date: "March 9, 2016"
+output:
+  pdf_document:
+    keep_tex: yes
+  html_document: default
+---
+
+
+
+
+
+# Dados
+
+```{r, echo=FALSE}
+trab1 <- function (x) read.table(paste0("Trabalho1-", x, ".dat"))
+#knitr::kable(trab1("A"))
+
+library(pander)
+cidades <- trab1("F")
+pander(cidades)
+```
+
+
+# Gabarito
+
+
+Amplitude das cidades:
+
+```{r amplitude, echo=FALSE}
+maximo <- sapply(cidades, max)
+minimo <- sapply(cidades, min)
+maximo - minimo
+```
+
+Média das cidades:
+
+```{r, echo=FALSE}
+sapply(cidades, mean)
+
+```
+
+Desvio padrão das cidades:
+
+```{r, echo=F}
+sapply(cidades, sd)
+```
+
+Gráfico de pareto
+
+```{r, echo=FALSE}
+barplot(sort(sapply(cidades, mean), decreasing = T))
+```
