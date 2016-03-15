@@ -1,0 +1,207 @@
+---
+title: "Aula 2 ProbEst UNIAN 2016.1"
+author: "Felipe Figueiredo"
+date: "February 26, 2016"
+output:
+  html_document:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+# Descrições numéricas
+
+
+## TVs por residência
+Vamos estudar o número de aparelhos de TV na residência.
+
+```{r TV (dados), echo=FALSE}
+#options(digits = 1)
+TV <- c(1,1,2,3,5,1,2,3,2,1,1,2,2,2,2)
+```
+
+Os dados brutos da amostra: {`r TV`}
+
+### Descrição numérica da amostra
+Coletamos uma amostra do número de TVs por residência. (Fonte: sala 4)
+
+#### Rol
+
+O **rol** é a amostra, em ordem crescente.
+
+O rol dessa amostra: {`r sort(TV)`}.
+
+#### Média
+
+$$ \bar{x}  = \sum \frac{x_i}{n} $$
+
+A média desta amostra é `r mean(TV)`.
+
+#### Desvio-padrão (amostral)
+Fórmula
+$$ \text{DP } = \sqrt{ \frac{\sum(x_i - \bar{x})^2}{n-1} } $$
+
+O desvio padrão desta amostra é `r sd(TV)`.
+
+#### Resumo
+- O tamanho da amostra é `r length(TV)`;
+- O número médio de TVs por residência é `r mean(TV)`;
+- O desvio padrão (dispersão) de TVs por residência é `r sd(TV)`.
+
+### Descrição gráfica 
+
+#### Histograma
+
+```{r TV histograma, echo=FALSE}
+hist(TV, main="Número de TVs por residência")
+```
+
+#### Diagrama de pontos
+
+```{r TV Gráfico de pontos, echo=FALSE}
+stripchart(TV, method = "stack", at=0, pch=19, offset = 0.7, main="Número de TVs por residência")
+```
+
+
+#### 
+
+# Alturas x sapatos
+
+Fonte: sala de professores
+
+##Dados (homens)
+
+```{r alturas e sapatos (dados),echo=FALSE}
+homens <- data.frame(altura = c(178, 163, 170, 175, 175, 174, 171, 182, 190, 176), sapato = c(42, 40, 42, 41, 41, 40, 40, 42, 43, 42), sexo = rep("H",10))
+
+mulheres <- data.frame(altura = c(170, 158, 165, 165, 169, 173, 168, 172, 162, 165), sapato=c(37, 37, 37, 37, 37, 39, 37, 38, 36, 38), sexo = rep("M",10))
+
+attach(homens)
+```
+
+Alturas
+
+`r altura`
+
+Tamanhos dos sapatos
+
+`r sapato`
+
+
+## Gráfico
+```{r alturas e sapatos (dispersão), echo=FALSE}
+plot(jitter(sapato),jitter(altura), xlab = "Número do sapato", ylab = "Altura (cm)")
+abline(lm(altura~sapato), col="blue", lwd=3)
+legend("topleft","r=0.75")
+detach(homens)
+```
+
+
+## Homens + Mulheres
+
+### Descrições numéricas
+
+- altura média homens: `r mean(homens$altura)`
+- altura média mulheres: `r mean(mulheres$altura)`
+
+Altura
+
+```{r alturas histograma,echo=FALSE}
+xerau <- rbind(homens,mulheres)
+
+attach(xerau)
+hist(altura)
+abline(v = quantile(altura),col = "yellow")
+abline(v = mean(altura),lwd = 2, col = "blue")
+abline(v = median(altura),lwd = 2, col = "red")
+
+legenda <- c("azul = media", "vermelho = mediana", "amarelo = quartis")
+legend("topright",legenda,border = "n")
+detach(xerau)
+```
+
+Sapato
+
+```{r sapatos Pareto, echo=F} 
+attach(xerau)
+barplot(table(sapato))
+abline(v=quantile(sapato),col="yellow")
+abline(v=mean(sapato),lwd=2, col="blue")
+abline(v=median(sapato),lwd=2, col="red")
+
+legenda <- c("azul = media", "vermelho = mediana", "amarelo = quartis")
+legend("topright",legenda,border = "n")
+#detach(xerau)
+
+```
+
+### Polígono de frequências
+
+```{r alturas Polígono, echo=F}
+h <- hist(altura)
+plot(h$mids, h$counts, type = "l", lwd=2, main = "Polígono de frequências")
+points(h$mids, h$counts,pch=24)
+lines(h$mids, h$counts, lwd=2)
+```
+
+### Histograma + polígono
+
+```{r alturas histograma + polígono, echo=F}
+plot(h, main = "Histograma + polígono")
+points(h$mids, h$counts,pch=24)
+lines(h$mids, h$counts, lwd=2, col="blue")
+```
+
+### Ramo e folhas
+
+Veja com atenção o gráfico de ramo e folhas
+
+TVs
+
+
+```{r TV ramo e folha, echo=F}
+stem(TV)
+```
+
+alturas
+
+```{r alturas ramo e folha, echo=FALSE}
+stem(altura)
+```
+
+
+
+### Gráfico de Pareto
+
+#### Variável categórica (nominal)
+
+Pareto
+
+```{r nominal pareto, echo=FALSE}
+barplot(table(sexo))
+```
+
+Pizza 
+
+```{r nominal pizza, echo=FALSE}
+fatias <- table(sexo)
+pie(fatias)
+
+```
+
+
+#### Variável categórica (ordinal)
+
+Pareto
+
+```{r ordinal pareto, echo=F}
+barplot(table(secretario.luminosidade <- sample(c("Muito bom", "Médio", "Fraco"), 20, replace = T)))
+#legend("right", "Parabéns!")
+```
+
+Pizza
+
+```{r ordinal pizza, echo=F}
+pie(table(secretario.luminosidade))
+```
+
