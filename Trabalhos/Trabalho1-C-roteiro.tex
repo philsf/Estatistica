@@ -1,0 +1,259 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Felipe Figueiredo},
+            pdftitle={Trabalho 1},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{Trabalho 1}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{Felipe Figueiredo}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \predate{\centering\large\emph}
+  \postdate{\par}
+  \date{March 9, 2016}
+
+
+
+\begin{document}
+
+\maketitle
+
+
+\section{Dados}\label{dados}
+
+\begin{longtable}[c]{@{}cccc@{}}
+\toprule
+\begin{minipage}[b]{0.06\columnwidth}\centering\strut
+A
+\strut\end{minipage} &
+\begin{minipage}[b]{0.06\columnwidth}\centering\strut
+B
+\strut\end{minipage} &
+\begin{minipage}[b]{0.06\columnwidth}\centering\strut
+C
+\strut\end{minipage} &
+\begin{minipage}[b]{0.06\columnwidth}\centering\strut
+D
+\strut\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2062
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2802
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2322
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2052
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2971
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2502
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1018
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1918
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1642
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1526
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1634
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1805
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2671
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1787
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1937
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2125
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+3011
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1589
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2203
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2311
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2605
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1669
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+946
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1916
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1970
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2078
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2414
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2328
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2200
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+3249
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+829
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1856
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2374
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2097
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1913
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2421
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2048
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1753
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1246
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1078
+\strut\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\section{Gabarito}\label{gabarito}
+
+Amplitude das cidades:
+
+\begin{verbatim}
+##    A    B    C    D 
+## 1369 1723 1585 1343
+\end{verbatim}
+
+Média das cidades:
+
+\begin{verbatim}
+##      A      B      C      D 
+## 2355.4 2105.2 1646.2 1981.0
+\end{verbatim}
+
+Desvio padrão das cidades:
+
+\begin{verbatim}
+##        A        B        C        D 
+## 451.3221 574.4144 598.6128 382.8098
+\end{verbatim}
+
+Gráfico de pareto
+
+\includegraphics{Trabalho1-C-roteiro_files/figure-latex/unnamed-chunk-4-1.pdf}\\
+
+\end{document}

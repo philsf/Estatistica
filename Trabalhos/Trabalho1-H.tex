@@ -1,0 +1,287 @@
+\everymath{\displaystyle}
+%\documentclass[pdftex,a4paper]{article}
+\documentclass[a4paper]{article}
+%%classes: article, report, book, proc, amsproc
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Misc
+% para acertar os acentos
+\usepackage[brazilian]{babel} 
+%\usepackage[portuguese]{babel} 
+% \usepackage[english]{babel}
+% \usepackage[T1]{fontenc}
+% \usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{fullpage}
+% \usepackage{graphicx} %See PDF section
+\usepackage{multicol}
+\setlength{\columnseprule}{0.5pt}
+\setlength{\columnsep}{20pt}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% PDF support
+
+\usepackage[pdftex]{color,graphicx}
+% %% Hyper-refs
+\usepackage[pdftex]{hyperref} % for printing
+% \usepackage[pdftex,bookmarks,colorlinks]{hyperref} % for screen
+
+%% \newif\ifPDF
+%% \ifx\pdfoutput\undefined\PDFfalse
+%% \else\ifnum\pdfoutput > 0\PDFtrue
+%%      \else\PDFfalse
+%%      \fi
+%% \fi
+
+%% \ifPDF
+%%   \usepackage[T1]{fontenc}
+%%   \usepackage{aeguill}
+%%   \usepackage[pdftex]{graphicx,color}
+%%   \usepackage[pdftex]{hyperref}
+%% \else
+%%   \usepackage[T1]{fontenc}
+%%   \usepackage[dvips]{graphicx}
+%%   \usepackage[dvips]{hyperref}
+%% \fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Math
+\usepackage{amsmath,amsfonts,amssymb}
+% para usar R de Real do jeito que o povo gosta
+\usepackage{amsfonts} % \mathbb
+% para usar as letras frescas como L de Espaco das Transf Lineares
+% \usepackage{mathrsfs} % \mathscr
+
+% Oferecer seno e tangente em pt, com os comandos usuais.
+\providecommand{\sin}{} \renewcommand{\sin}{\hspace{2pt}\mathrm{sen}}
+\providecommand{\tan}{} \renewcommand{\tan}{\hspace{2pt}\mathrm{tg}}
+
+% dt of integrals = \ud t
+\newcommand{\ud}{\mathrm{\ d}}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\date{
+\bigskip
+Curso: \underline{\hspace{8cm}}\\
+\ \\
+Turma: \underline{\hspace{1cm}} Série: \underline{\hspace{1cm}} Turno:
+\underline{\hspace{1cm}}\\
+\ \\
+Prof: \underline{\hspace{8cm}}\\
+}
+
+\title{Probabilidade e Estatística - Trabalho 1}
+
+\author{
+{\bf Grupo H}\\
+\ \\
+Nome: \underline{\hspace{6cm}} RA: \underline{\hspace{2cm}} Assinatura: \underline{\hspace{4cm}}\\
+Nome: \underline{\hspace{6cm}} RA: \underline{\hspace{2cm}} Assinatura: \underline{\hspace{4cm}}\\
+Nome: \underline{\hspace{6cm}} RA: \underline{\hspace{2cm}} Assinatura: \underline{\hspace{4cm}}\\
+Nome: \underline{\hspace{6cm}} RA: \underline{\hspace{2cm}} Assinatura: \underline{\hspace{4cm}}\\
+Nome: \underline{\hspace{6cm}} RA: \underline{\hspace{2cm}} Assinatura: \underline{\hspace{4cm}}\\
+Nome: \underline{\hspace{6cm}} RA: \underline{\hspace{2cm}} Assinatura: \underline{\hspace{4cm}}\\
+Nome: \underline{\hspace{6cm}} RA: \underline{\hspace{2cm}} Assinatura: \underline{\hspace{4cm}}\\
+Nome: \underline{\hspace{6cm}} RA: \underline{\hspace{2cm}} Assinatura: \underline{\hspace{4cm}}\\
+Nome: \underline{\hspace{6cm}} RA: \underline{\hspace{2cm}} Assinatura: \underline{\hspace{4cm}}\\
+Nome: \underline{\hspace{6cm}} RA: \underline{\hspace{2cm}} Assinatura: \underline{\hspace{4cm}}\\
+}
+
+% Usar tabela do RStudio
+\usepackage{longtable,booktabs}
+
+\begin{document}
+\maketitle
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Título e cabeçalho
+%\noindent\parbox[c]{.15\textwidth}{\includegraphics[width=.15\textwidth]{logo}}\hfill
+\parbox[c]{.825\textwidth}{\raggedright%
+  \sffamily {\LARGE
+
+Probabilidade e Estatística: Trabalho 1
+
+\par\bigskip}
+{Prof: Felipe Figueiredo\par}
+{\url{http://sites.google.com/site/proffelipefigueiredo}\par}
+}
+
+Versão: \verb|20160315|
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Conteúdo}
+
+Seção {\bf Juntando tudo}, do capítulo 2 (pgs 98 e 99) do livro texto da disciplina (PLT). 
+
+\subsection{Dados}
+Seu grupo é o {\bf Grupo H}.
+
+Seu grupo deve responder às questões do trabalho, mas não deve usar os dados do livro. Os dados que seu grupo deve usar, são os abaixo:
+
+\begin{longtable}[c]{@{}cccc@{}}
+\toprule
+\begin{minipage}[b]{0.06\columnwidth}\centering\strut
+A
+\strut\end{minipage} &
+\begin{minipage}[b]{0.06\columnwidth}\centering\strut
+B
+\strut\end{minipage} &
+\begin{minipage}[b]{0.06\columnwidth}\centering\strut
+C
+\strut\end{minipage} &
+\begin{minipage}[b]{0.06\columnwidth}\centering\strut
+D
+\strut\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2849
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2100
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1898
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2399
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2442
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1732
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1429
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2182
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2531
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2568
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2155
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1867
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2247
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2160
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1270
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1360
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1330
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1931
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1056
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2126
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1729
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1568
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1634
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2120
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2646
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2006
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1214
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2483
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1871
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2396
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1757
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2051
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2308
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2100
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1167
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1647
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2612
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+1361
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+853
+\strut\end{minipage} &
+\begin{minipage}[t]{0.06\columnwidth}\centering\strut
+2069
+\strut\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\section{Valor}
+O trabalho valerá até $3.0$pts que serão somados com a nota da P1, compondo assim a nota do primeiro bimestre (B1).
+
+\section{Entrega}
+
+O Trabalho 1 deverá ser entregue na aula e horário normais da semana indicada no endereço abaixo:
+
+\url{https://sites.google.com/site/proffelipefigueiredo/anhanguera/2016}.
+
+\subsection{Observações}
+
+\begin{enumerate}
+\item Usar o conjunto de dados designado para seu grupo, e não os dados do livro.
+\item Este trabalho pode ser feito a lápis, ou a caneta. Respostas finais devem estar a caneta, e destacadas. 
+\item Caso prefira, o grupo pode também fazer o trabalho no computador e entregar impresso.
+\item O trabalho deve ser entregue com a capa providenciada. Esta folha de instruções não é necessária.
+\item A assinatura de cada integrante é {\bf obrigatória} para que este receba a nota. Sem assinatura na capa, não adianta chorar.
+\end{enumerate}
+
+\end{document}
