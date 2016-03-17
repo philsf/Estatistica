@@ -29,7 +29,7 @@ Abaixo estão indicadas as seções do livro texto utilizadas em cada aula. A re
 
 - [Introdução à estatística][] (versão 20160306).
 - [Distribuição de Frequências e Gráficos][] (versão 20160306).
-- [Análise Descritiva][]
+- [Análise Descritiva][] (versão 20160317).
 
 
 [Introdução à estatística]: Listas/Estatistica-lista-intro.pdf
