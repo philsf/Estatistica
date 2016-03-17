@@ -29,11 +29,13 @@ Abaixo estão indicadas as seções do livro texto utilizadas em cada aula. A re
 
 - [Introdução à estatística][] (versão 20160306).
 - [Distribuição de Frequências e Gráficos][] (versão 20160306).
-- Medidas de Tendência Central
-- Medidas de Variação
+- [Análise Descritiva][]
+
 
 [Introdução à estatística]: Listas/Estatistica-lista-intro.pdf
 [Distribuição de Frequências e Gráficos]: Listas/Estatistica-lista-Frequencias.pdf
+
+[Análise Descritiva]: Listas/Estatistica-lista-analise_descritiva.pdf
 
 ## Trabalhos
 
