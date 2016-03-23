@@ -1,0 +1,76 @@
+---
+title: "Revisão 2: Sapatadas nas alturas"
+author: "Felipe Figueiredo"
+date: "March 30, 2016"
+output: html_document
+---
+
+# Análise Descritiva
+
+## Medidas sumárias
+
+```{r dados, echo = FALSE}
+library(pander)
+
+dados <- read.table("dados-20161.dat")
+attach(dados)
+
+A <- dados[1:10,]
+B <- dados[11:20,]
+C <- dados[21:30,]
+D <- dados[31:40,]
+```
+
+Em episódios anteriores, fizemos uma coleta de dados na sala, em quatro setores $\alpha$, $\beta$, $\gamma$ e $\delta$.
+
+### Setor $\alpha$
+
+O rol das alturas do setor $\alpha$ é:
+
+`r sort(A$altura)`
+
+
+
+As medidas sumárias do setor $\alpha$ são:
+
+```{r, echo = FALSE}
+pander(summary(A))
+```
+
+Podemos sumarizar os dados tanto como média $\pm$ desvio-padrão, ou como mediana $\pm$ AIQ.
+
+Para as alturas deste setor, temos:
+
+Média = `r mean(A$altura)`
+
+Desvio Padrão = `r sd(A$altura)`
+
+Mediana = `r median(A$altura)`
+
+AIQ = `r IQR(A$altura)`
+
+```{r barras x histogramas, echo = F}
+# par(mfrow = c(2,2))
+# barplot(sort(table(sapato[genero == "F"]), decreasing = T), main = "F")
+# barplot(sort(table(sapato[genero == "M"]), decreasing = T), main = "M")
+# 
+# hist(sapato[genero == "F"], main = "F", right = F, xlab = "")
+# hist(sapato[genero == "M"], main = "M", right = F, xlab = "")
+# 
+# par(mfrow = c(1,1))
+# boxplot(sapato ~ genero)
+# IQR(sapato)
+# sort(sapato)
+# summary(sapato)
+# 
+
+```
+
+## Guerra dos sexos
+
+```{r sexos, echo=FALSE}
+cueca <- dados[genero=="M",]
+calcinha <- dados[genero == "F",]
+```
+
+

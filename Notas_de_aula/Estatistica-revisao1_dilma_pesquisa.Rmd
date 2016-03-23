@@ -1,0 +1,87 @@
+---
+title: "Revisão 1: Dilma termina o mandato?"
+author: "Felipe Figueiredo"
+date: "March 23, 2016"
+output: html_document
+---
+# Pesquisa de opinião
+
+Vou coletar, em cada fileira, as respostas para a pergunta:
+
+**Pergunta: você *acha* que a presidente Dilma vai concluir o mandato?**
+
+Obs: não importa se você é pró-governo, contra, ou indeciso. Para esta atividade estamos interessados apenas na sua opinião se a permanência da presidente pode se sustentar.
+
+Respostas possíveis (em ordem alfabética)
+
+- **Não** (ela será destituída, ou renunciará)
+- **Não sei** (dããã...)
+- **Sim** (ela vai até o final do mandato)
+
+```{r dados, echo=FALSE}
+
+Nao = 1
+NS  = 1
+Sim = 1
+
+```
+
+
+```{r tratamento, echo = F}
+Sim <- rep("Sim", Sim)
+Nao <- rep("Não", Nao)
+NS <- rep("Não Sei", NS)
+
+dilma <- data.frame(Opiniao = c(Sim, Nao, NS))
+frequencias <- table(dilma)
+proporcoes <- prop.table(frequencias)*100
+```
+
+**Questionário 1**
+
+1. Coletamos uma população ou uma amostra?
+1. Esse dado é quantitativo ou qualitativo?
+1. Classifique o tipo de dado (nível de mensuração)
+1. Que medidas sumárias podemos calcular para esse tipo de dado?
+
+## Descrição dos dados
+
+### Sumário das respostas
+As respostas coletadas por categoria são:
+
+`r pander::pander(frequencias)`
+
+**Questionário 2**
+
+1. Essas são frequências absolutas ou relativas?
+1. Essas frequências são parâmetros, ou estatísticas?
+1. Como calcular as proporções e as porcentagens de cada possível resposta?
+1. Que tipo de gráfico(s) seria(m) adequado(s) para visualizar esses dados?
+
+### Porcentagens
+
+Os números a seguir estão expressões em %
+`r pander::pander(proporcoes)`
+
+## Gráficos
+
+
+### Barras
+```{r barras, echo = FALSE}
+
+#barplot(frequencias, col=c("red", "yellow","green"))
+
+```
+
+
+### Pizza
+
+```{r pizza, echo = F}
+lbs <- rownames(proporcoes)
+pct <- round(proporcoes)
+lbs <- paste(lbs, pct)
+lbs <- paste(lbs, "%", sep = "")
+#pie(proporcoes, col=c("red", "yellow","green"), labels = lbs)
+
+```
+
