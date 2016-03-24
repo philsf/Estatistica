@@ -20,6 +20,11 @@ Abaixo estão indicadas as seções do livro texto utilizadas em cada aula. A re
 1. Distribuição de Frequências e Gráficos (**2.1** e **2.2**).
 1. Medidas de Tendência Central (**2.3**) e Medidas de Variação (**2.4**).
 1. Medidas de Variação (**2.4**) e Medidas de Posição (**2.5**).
+1. [Revisão 1][] ([Pesquisa de opinião][])
+1. Revisão 2
+
+[Revisão 1]: Notas_de_aula/Estatistica-revisao1-jornal.pdf
+[Pesquisa de opinião]: Notas_de_aula/Estatistica-revisao1_dilma_pesquisa.pdf
 
 ### Segundo bimestre (B2)
 
