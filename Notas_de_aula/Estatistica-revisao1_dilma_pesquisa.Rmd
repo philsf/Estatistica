@@ -1,8 +1,8 @@
 ---
-title: "Revisão 1: Dilma termina o mandato?"
+title: 'Revisão 1: Dilma termina o mandato?'
 author: "Felipe Figueiredo"
 date: "March 23, 2016"
-output: html_document
+output: pdf_document
 ---
 # Pesquisa de opinião
 
@@ -20,9 +20,9 @@ Respostas possíveis (em ordem alfabética)
 
 ```{r dados, echo=FALSE}
 
-Nao = 1
-NS  = 1
-Sim = 1
+Nao = 23
+NS  = 7
+Sim = 51
 
 ```
 
@@ -69,7 +69,7 @@ Os números a seguir estão expressões em %
 ### Barras
 ```{r barras, echo = FALSE}
 
-#barplot(frequencias, col=c("red", "yellow","green"))
+barplot(frequencias, col=c("red", "yellow","green"))
 
 ```
 
@@ -81,7 +81,7 @@ lbs <- rownames(proporcoes)
 pct <- round(proporcoes)
 lbs <- paste(lbs, pct)
 lbs <- paste(lbs, "%", sep = "")
-#pie(proporcoes, col=c("red", "yellow","green"), labels = lbs)
+pie(proporcoes, col=c("red", "yellow","green"), labels = lbs)
 
 ```
 
