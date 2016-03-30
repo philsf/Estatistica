@@ -21,7 +21,7 @@ C <- dados[21:30,]
 D <- dados[31:40,]
 ```
 
-Em episódios anteriores, fizemos uma coleta de dados na sala, em quatro setores $\alpha$, $\beta$, $\gamma$ e $\delta$.
+Em episódios anteriores, fizemos uma coleta de dados na sala, dividindo-a em quatro setores $\alpha$, $\beta$, $\gamma$ e $\delta$.
 
 ### Setor $\alpha$
 
