@@ -125,21 +125,35 @@ AIQ = `r B_aiq`
 
 **Sumário 2: mediana $\pm$ AIQ = `r B_mediana` $\pm$ `r B_aiq`**
 
-## Comparando os setores $\alpha$ e $\beta$
+### Comparando os setores $\alpha$ e $\beta$
 
-Gráfico de barras das médias
+**Questionário 3**
+
+1. É possível concluir que as pessoas do setor $\alpha$ são mais altas que as do setor $\beta$ considerando a média?
+1. E a mediana?
+1. E se você comparar o desvio padrão destes setores? Qual parece ter mais variabilidade?
+1. E a AIQ dos setores?
+
+**Gráfico de barras das médias**
+
+Veja o gráfico de barras da altura média de todos os 4 setores.
 
 ```{r barras_AB, echo = F}
 AB_altura <- data.frame(Setor = c("A", "B", "C", "D"))
 tab <- table(AB_altura)
 tab[1:4] <- c(A_media, B_media, mean(C$altura), mean(D$altura))
-barplot(tab)
+barplot(tab, ylim = c(0,200))
 ```
-
 
 # Curiosidades 
 
+Como primeira curiosidade, vamos ver uma variação do gráfico de barras, quando queremos decompor a variável em subcategorias.
+
 ## Sapatos
+
+Vamos visualizar os tamanhos de sapatos, separados por sexo.
+
+Primeiramente, o gráfico de barras dos sapatos, sem nenhuma subcategoria.
 
 ```{r sexos, echo=FALSE}
 cueca <- dados[genero == "M",]
@@ -148,7 +162,6 @@ calcinha <- dados[genero == "F",]
 #- Média das mulheres = `r mean(calcinha$altura)`
 ```
 
-
 ### Gráfico de barras dos sapatos da amostra completa (40 pessoas)
 
 ```{r sapatos1, echo = F}
@@ -156,6 +169,7 @@ par(mfrow = c(1,1))
 barplot(table(sapato), main = "Sapatos da amostra")
 ```
 
+Sem graça, né? Nem tanto! Dá pra ver que nesse gráfico tem dois "montes", separados por um "vale". Isso se chama **distribuição bimodal**, pois essas 40 amostras incluem tanto homens quanto mulheres, e ambos os sexos tem características diferentes. Essa versão cinza do gráfico já dá uma idéia que faz sentido procurar algum tipo de subdivisão nos dados, pra procurar distribuições unimodais.
 
 ### Gráfico de barras dos sapatos por sexo (empilhado)
 ```{r sapatos2, echo = F}
@@ -165,6 +179,9 @@ counts <- table(genero, sapato); barplot(counts, legend.text = rownames(counts),
 title("Sapatos por sexo")
 ```
 
+Esse gráfico com os sexos empilhados não é utilizado com muita frequência, mas pelas cores já dá pra ver que as mulheres se estão nos tamanhos menores, e os homens nos tamanhos maiores (o que é muito razoável, sabendo que se trata de tamanhos de sapatos!).
+
+Como é a maneira mais usual de representar esse tipo de gráfico de barras?
 
 ### Gráfico de barras dos sapatos por sexo (separado)
 ```{r sapatos3, echo = F}
@@ -172,6 +189,8 @@ par(mfrow = c(1,1))
 counts <- table(genero, sapato); barplot(counts, legend.text = rownames(counts), beside = T, col = c("pink", "lightblue"))
 title("Sapatos por sexo")
 ```
+
+Com barras independentes! Observe, no entanto, que agora as alturas das barras **não correspondem** às alturas anteriores! Mesmo assim, fica bem mais fácil de saber quantas mulheres e quantos homens calçam cada tamanho, não?
 
 
 ## Modelagem
@@ -245,4 +264,3 @@ Se uma pessoa calça 42, a probabilidade de ela ser do sexo masculino é `r roun
 # pred <- predict(modelo.altura.sapato, interval = "pred")
 # matlines(altura,pred[,c("lwr","upr")], col = "red")
 ```
-
