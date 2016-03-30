@@ -29,14 +29,6 @@ O rol das alturas do setor $\alpha$ é:
 
 `r sort(A$altura)`
 
-
-
-As medidas sumárias do setor $\alpha$ são:
-
-```{r, echo = FALSE}
-pander(summary(A))
-```
-
 Podemos sumarizar os dados tanto como média $\pm$ desvio-padrão, ou como mediana $\pm$ AIQ.
 
 Para as alturas deste setor, temos:
