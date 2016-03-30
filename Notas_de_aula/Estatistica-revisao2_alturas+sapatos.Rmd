@@ -210,6 +210,8 @@ a36 <- round(predict(modelo.sapato.altura, data.frame(sapato = 36), interval = "
 
 Este **modelo** representa uma possível explicação para o fenômeno exibido nos dados da amostra. Se esta reta for uma boa explicação para os dados, podemos fazer predições baseado nesta curva. Esta reta se chama reta *regressora*, já que usamos o método chamado Regressão Linear para encontrá-la. 
 
+### Previsão numérica
+
 Podemos por exemplo, estimar a altura de uma pessoa, sabendo quanto ela calça.
 
 Por exemplo, se uma pessoa calça 42, a estimativa para sua altura é `r a42[1]`. Podemos visualizar esta *predição* no gráfico.
@@ -218,6 +220,22 @@ Na verdade, considerando a *margem de erro* desta estimativa, é provável que s
 
 Por outro lado, alguém que calça 36 deve medir `r a36[1]`, mas sua altura provavelmente se encontra no intervalo [`r a36[2:3]`].
 
+### Previsão categórica
+
+```{r adivinhando sexo, echo = F}
+# modelo.genero.altura <- glm(genero ~ altura, family = binomial(link = "logit"))
+# predict(modelo.genero.altura, data.frame(altura=178), type = "response")*100
+# predict(modelo.genero.altura, data.frame(altura=160), type = "response")*100
+
+modelo.genero.sapato <- glm(genero ~ sapato, family = binomial(link = "logit"))
+
+s42 <- predict(modelo.genero.sapato, data.frame(sapato=42), type = "response")*100
+s36 <- predict(modelo.genero.sapato, data.frame(sapato=36), type = "response")*100
+```
+
+Também podemos fazer estimativa de uma variável categórica, como por exemplo o sexo, baseado em quanto ela calça - ou mesmo se você vai passar, baseado na sua nota do primeiro bimestre (rsrs).
+
+Se uma pessoa calça 42, a probabilidade de ela ser do sexo masculino é `r round(s42, digits = 3)`%. Agora se ela calça 36, a probabilidade já cai para `r round(s36, digits = 3)`%.
 
 ```{r chega, echo = F}
 # plot(sapato ~ altura)
