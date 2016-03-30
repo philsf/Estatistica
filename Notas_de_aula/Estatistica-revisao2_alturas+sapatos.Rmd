@@ -5,9 +5,9 @@ date: "March 30, 2016"
 output: html_document
 ---
 
-# Análise Descritiva
+# Medidas sumárias
 
-## Medidas sumárias
+## Alturas
 
 ```{r dados, echo = FALSE}
 library(pander)
@@ -29,25 +29,50 @@ O rol das alturas do setor $\alpha$ é:
 
 `r sort(A$altura)`
 
-Podemos sumarizar os dados tanto como média $\pm$ desvio-padrão, ou como mediana $\pm$ AIQ.
+Podemos sumarizar os dados tanto como **média $\pm$ desvio-padrão**, ou como **mediana $\pm$ AIQ**.
+
+**Questionário 1**
+
+1. Esses dados são qualitativos ou quantitativos?
+1. Discretos ou contínuos?
+1. População ou amostra?
+1. Determine a **Amplitude Total** dos dados
+1. Sumarize os dados como **média $\pm$ desvio-padrão**
+1. Sumarize os dados como **mediana $\pm$ AIQ**
 
 Para as alturas deste setor, temos:
+```{r sumariosA, echo=FALSE}
+A_media <- mean(A$altura)
+A_dp <- sd(A$altura)
+A_mediana <- median(A$altura)
+A_q1 <- 165
+A_q3 <- 172
+A_aiq <- A_q3 - A_q1
+```
 
-Média = `r mean(A$altura)`
+Média = `r A_media`
 
-Desvio Padrão = `r sd(A$altura)`
+Desvio Padrão = `r A_dp`
 
-Mediana = `r median(A$altura)`
+**Sumário 1: Média $\pm$ DP = `r A_media` $\pm$ `r round(A_dp, digits = 1)`**
 
-AIQ = `r IQR(A$altura)`
+Mediana = `r A_mediana`
 
-```{r barras x histogramas, echo = F}
+Q1 = `r A_q1`
+
+Q3 = `r A_q3`
+
+AIQ = `r A_aiq`
+
+**Sumário 2: mediana $\pm$ AIQ = `r A_mediana` $\pm$ `r A_aiq`**
+
+```{r histogramas sapato, echo = F}
 # par(mfrow = c(2,2))
 # barplot(sort(table(sapato[genero == "F"]), decreasing = T), main = "F")
 # barplot(sort(table(sapato[genero == "M"]), decreasing = T), main = "M")
-# 
-# hist(sapato[genero == "F"], main = "F", right = F, xlab = "")
-# hist(sapato[genero == "M"], main = "M", right = F, xlab = "")
+
+# hist(sapato[genero == "F"], main = "F", right = F, xlab = "Sapato", ylab = "")
+# hist(sapato[genero == "M"], main = "M", right = F, xlab = "Sapato", ylab = "")
 # 
 # par(mfrow = c(1,1))
 # boxplot(sapato ~ genero)
@@ -58,11 +83,148 @@ AIQ = `r IQR(A$altura)`
 
 ```
 
-## Guerra dos sexos
-
-```{r sexos, echo=FALSE}
-cueca <- dados[genero=="M",]
-calcinha <- dados[genero == "F",]
+```{r barras sapato , echo = FALSE}
+# barplot(table(sapato[genero == "F"]), main = "F", xlab = "Sapato")
+# barplot(table(sapato[genero == "M"]), main = "M", xlab = "Sapato")
 ```
 
+### Setor $\beta$
+
+O rol das alturas do setor $\beta$ é
+
+`r sort(B$altura)`
+
+**Questionário 2**
+
+1. Determine a **Amplitude Total** da amostra
+1. Sumarize a amostra como **média $\pm$ desvio-padrão**
+1. Sumarize a amostra como **mediana $\pm$ AIQ**
+
+```{r sumariosB, echo=FALSE}
+B_media <- mean(B$altura)
+B_dp <- sd(B$altura)
+B_mediana <- median(B$altura)
+B_q1 <- 162
+B_q3 <- 179
+B_aiq <- B_q3 - B_q1
+```
+
+Média = `r B_media`
+
+Desvio Padrão = `r B_dp`
+
+**Sumário 1: Média $\pm$ DP = `r B_media` $\pm$ `r round(B_dp, digits = 1)`**
+
+Mediana = `r B_mediana`
+
+Q1 = `r B_q1`
+
+Q3 = `r B_q3`
+
+AIQ = `r B_aiq`
+
+**Sumário 2: mediana $\pm$ AIQ = `r B_mediana` $\pm$ `r B_aiq`**
+
+## Comparando os setores $\alpha$ e $\beta$
+
+Gráfico de barras das médias
+
+```{r barras_AB, echo = F}
+AB_altura <- data.frame(Setor = c("A", "B", "C", "D"))
+tab <- table(AB_altura)
+tab[1:4] <- c(A_media, B_media, mean(C$altura), mean(D$altura))
+barplot(tab)
+```
+
+
+# Curiosidades 
+
+## Sapatos
+
+```{r sexos, echo=FALSE}
+cueca <- dados[genero == "M",]
+calcinha <- dados[genero == "F",]
+#- Média dos homens = `r mean(cueca$altura)`
+#- Média das mulheres = `r mean(calcinha$altura)`
+```
+
+
+### Gráfico de barras dos sapatos da amostra completa (40 pessoas)
+
+```{r sapatos1, echo = F}
+par(mfrow = c(1,1))
+barplot(table(sapato), main = "Sapatos da amostra")
+```
+
+
+### Gráfico de barras dos sapatos por sexo (empilhado)
+```{r sapatos2, echo = F}
+par(mfrow = c(1,2))
+barplot(table(sapato), main = "Sapatos da amostra")
+counts <- table(genero, sapato); barplot(counts, legend.text = rownames(counts), col = c("pink", "lightblue"))
+title("Sapatos por sexo")
+```
+
+
+### Gráfico de barras dos sapatos por sexo (separado)
+```{r sapatos3, echo = F}
+par(mfrow = c(1,1))
+counts <- table(genero, sapato); barplot(counts, legend.text = rownames(counts), beside = T, col = c("pink", "lightblue"))
+title("Sapatos por sexo")
+```
+
+
+## Modelagem
+
+Como *curiosidade*, vamos ver como fazer um modelo, e a partir deste, fazer algumas previsões.
+
+### Sapatos x Alturas
+
+Primeiramente, vamos visualizar os dados dados no plano cartesiano. Este tipo de gráfico é chamado de *gráfico de dispersão*.
+
+Cada ponto representa uma pessoa (com seu sapato e altura, respectivamente).
+
+É possível observar uma *tendência* de crescimento, ou seja, quanto maior o tamanho do pé (eixo x), mais alta é a pessoa (eixo y).
+
+
+```{r dispersao, echo = F}
+#plot(altura ~ sapato, xlim = c(0,50), ylim = c(0, 200))
+plot(altura ~ sapato)
+```
+
+Se quiséssemos *ajustar* uma curva aos pontos, que tipo de função seria apropriada?
+
+**Que tal uma reta?**
+
+```{r modelo, echo = F}
+plot(altura ~ sapato)
+modelo.sapato.altura <- lm(altura ~ sapato)
+abline(modelo.sapato.altura, lwd = 2, col = "blue")
+title("Ajuste linear")
+# pred <- predict(modelo.sapato.altura, interval = "pred")
+# matlines(sapato,pred[,c("lwr","upr")], col = "red")
+a42 <- round(predict(modelo.sapato.altura, data.frame(sapato = 42), interval = "conf"), digits = 1)
+a36 <- round(predict(modelo.sapato.altura, data.frame(sapato = 36), interval = "conf"), digits = 1)
+```
+
+
+Este **modelo** representa uma possível explicação para o fenômeno exibido nos dados da amostra. Se esta reta for uma boa explicação para os dados, podemos fazer predições baseado nesta curva. Esta reta se chama reta *regressora*, já que usamos o método chamado Regressão Linear para encontrá-la. 
+
+Podemos por exemplo, estimar a altura de uma pessoa, sabendo quanto ela calça.
+
+Por exemplo, se uma pessoa calça 42, a estimativa para sua altura é `r a42[1]`. Podemos visualizar esta *predição* no gráfico.
+
+Na verdade, considerando a *margem de erro* desta estimativa, é provável que sua altura esteja entre os valores [`r a42[2:3]`]
+
+Por outro lado, alguém que calça 36 deve medir `r a36[1]`, mas sua altura provavelmente se encontra no intervalo [`r a36[2:3]`].
+
+
+```{r chega, echo = F}
+# plot(sapato ~ altura)
+# modelo.altura.sapato <- lm()
+# abline(modelo.altura.sapato, lwd = 2, col = "blue")
+#
+# pred <- predict(modelo.altura.sapato, interval = "pred")
+# matlines(altura,pred[,c("lwr","upr")], col = "red")
+```
 
