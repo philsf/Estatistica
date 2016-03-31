@@ -21,10 +21,12 @@ Abaixo estão indicadas as seções do livro texto utilizadas em cada aula. A re
 1. Medidas de Tendência Central (**2.3**) e Medidas de Variação (**2.4**).
 1. Medidas de Variação (**2.4**) e Medidas de Posição (**2.5**).
 1. [Revisão 1][] ([Pesquisa de opinião][])
-1. Revisão 2
+1. [Revisão 2][] ([Dados de alturas e sapatos de 2016.1][])
 
 [Revisão 1]: Notas_de_aula/Estatistica-revisao1-jornal.pdf
 [Pesquisa de opinião]: Notas_de_aula/Estatistica-revisao1_dilma_pesquisa.pdf
+[Revisão 2]: Notas_de_aula/Estatistica-revisao2_alturas+sapatos.pdf
+[Dados de alturas e sapatos de 2016.1]: Notas_de_aula/dados-20161.xlsx
 
 ### Segundo bimestre (B2)
 
@@ -39,7 +41,6 @@ Abaixo estão indicadas as seções do livro texto utilizadas em cada aula. A re
 
 [Introdução à estatística]: Listas/Estatistica-lista-intro.pdf
 [Distribuição de Frequências e Gráficos]: Listas/Estatistica-lista-Frequencias.pdf
-
 [Análise Descritiva]: Listas/Estatistica-lista-analise_descritiva.pdf
 
 ## Trabalhos
