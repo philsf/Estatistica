@@ -145,6 +145,7 @@ tab[1:4] <- c(A_media, B_media, mean(C$altura), mean(D$altura))
 barplot(tab, ylim = c(0,200))
 ```
 
+
 # Curiosidades 
 
 Como primeira curiosidade, vamos ver uma variação do gráfico de barras, quando queremos decompor a variável em subcategorias.
