@@ -398,13 +398,64 @@
   \end{enumerate}
 \end{frame}
 
-\begin{frame}{Interpretando o $r$}
-  \begin{itemize}
-  \item Nunca devemos ignorar a última possibilidade (erro tipo I)!
-  \item o p-valor indica quão rara é essa coincidência
-  \item neste caso, em apenas 0.21\% dos experimentos não haveria uma
-    correlação real, e estaríamos cometendo um erro de interpretação
-  \end{itemize}
+% \begin{frame}{Interpretando o $r$}
+%   \begin{itemize}
+%   \item Nunca devemos ignorar a última possibilidade!
+%   % \item o p-valor indica quão rara é essa coincidência
+%   % \item neste caso, em apenas 0.21\% dos experimentos não haveria uma
+%   %   correlação real, e estaríamos cometendo um erro de interpretação
+%   \end{itemize}
+% \end{frame}
+
+\begin{frame}{Exercício}
+  \begin{block}{Exercício}
+    Dados de gastos com propaganda (x) e vendas (x), ambos em \$1000 de uma empresa.
+
+\bigskip
+
+\centering\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+x & 2.4 &  1.6& 2.0 & 2.6 & 1.4& 1.6& 2.0& 2.2\\
+\hline
+y & 225& 184& 220& 240& 180& 184& 186& 215\\
+\hline
+    \end{tabular}
+
+\bigskip
+
+Qual é a correlação entre os gastos de propaganda e as vendas? O que podemos concluir deste valor?
+  \end{block}
+
+Fonte: Larson \& Farber.
+\end{frame}
+
+\begin{frame}{Exercício}
+  \begin{block}{Cola}
+    \begin{columns}
+      \begin{column}{5cm}
+        \begin{itemize}
+        \item<1->  $\bar{x} = 1.975$
+        \item<1->  $\bar{y} = 204.25$
+        \item<1->  $s_x = 0.420034$
+        \item<1->  $s_y = 23.34065$
+        \end{itemize}
+      \end{column}
+      \begin{column}{5cm}
+        \begin{itemize}
+        \item<1-> $n = 8$
+        \item<1-> $\sum xy = 3289.8$
+        \item<1-> $r = \frac{\sum xy - n \bar{x}\bar{y}}{(n-1)s_x s_y}$
+        \end{itemize}
+      \end{column}
+    \end{columns}
+  \end{block}
+  \begin{block}{Solução}
+    \begin{displaymath}
+      r = \frac{3289.8 - (8 \times 1.975 \times 204.25)}{7 \times 0.420034 \times 23.34065} = 0.9129053 \approx 0.913
+    \end{displaymath}
+
+Interprete!
+  \end{block}
 \end{frame}
 
 \begin{frame}{Elevando o $r$ ao quadrado}
