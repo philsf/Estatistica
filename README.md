@@ -30,18 +30,30 @@ Abaixo estão indicadas as seções do livro texto utilizadas em cada aula. A re
 
 ### Segundo bimestre (B2)
 
-1. 
+1. [Correlação linear][] (Seção **9.1**)
+1. [Regressão linear][] (Seção **9.2**)
+1. [Distribuições de probabilidades discretas][] (Seções **4.1** e **4.2**)
+1. [Distribuições de probabilidades normais][] (Seções **5.1** e **5.2**)
+1. Inferência
+
+[Correlação linear]: Notas_de_aula/Estatistica-Correlacao.pdf
+[Regressão linear]: Notas_de_aula/Estatistica-Regressao.pdf
+[Distribuições de probabilidades discretas]: Notas_de_aula/Estatistica-Prob_Distrib_Discretas.pdf
+[Distribuições de probabilidades normais]: Notas_de_aula/Estatistica-Prob_Distrib_Normais.pdf
 
 ## Listas de exercícios e problemas
 
 - [Introdução à estatística][] (versão 20160306).
 - [Distribuição de Frequências e Gráficos][] (versão 20160306).
 - [Análise Descritiva][] (versão 20160317).
-
+- [Associação de variáveis][] (versão 20160504)
+- [Distribuições de Probabilidades][] (versão 20160504)
 
 [Introdução à estatística]: Listas/Estatistica-lista-intro.pdf
 [Distribuição de Frequências e Gráficos]: Listas/Estatistica-lista-Frequencias.pdf
 [Análise Descritiva]: Listas/Estatistica-lista-analise_descritiva.pdf
+[Associação de variáveis]: Listas/Estatistica-lista-Associacao
+[Distribuições de Probabilidades]: Listas/Estatistica-lista-Prob
 
 ## Trabalhos
 
