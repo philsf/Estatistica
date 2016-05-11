@@ -325,21 +325,41 @@ Os seguintes experimentos são binomiais ou não?
   \end{block}
 \end{frame}
 
-\begin{frame}{A distribuição Binomial}
+\begin{frame}{Representação gráfica}
 \includegraphics[width=\textwidth]{Prob_II/binomial}
 \end{frame}
 
-\begin{frame}{A distribuição Binomial}
+\begin{frame}{Valor esperado, variância e DP}
   \begin{itemize}
-  \item Quando executamos $n$ ensaios de Bernoulli
-    \alert{independentes}, encontramos a distribuição Binomial
-  \item Com $n$ ensaios (cada um com prob. $p$), temos a contagem $x$
-    de sucessos (desfecho = 1)
-  \item Notação $X \sim Bin(n,p)$
-  \item Valor esperado: $E[x]=np$
+  \item Média: $\mu = np$
+  \item Variância: $\sigma^2 = npq$
+  \item Desvio Padrão: $\sigma =\sqrt{npq}$
   \end{itemize}
 \end{frame}
 
+\begin{frame}{Exemplo}
+  \begin{example}
+    Em uma cidade, cerca de 56\% dos dias são nublados.
+    Encontre o valor esperado de dias nublados no mês de junho.
+  \end{example}
+  \begin{block}{Dados}
+    \begin{itemize}
+    \item $n = 30$
+    \item $p = 0.56, q = 0.44$
+    \end{itemize}
+  \end{block}
+  \begin{block}{Resolução}
+    \begin{displaymath}
+      E[x] = \mu = np = (30)(0.56) = \alert{16.8}
+    \end{displaymath}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Exemplo}
+  \begin{block}{Interpretação}
+    Em média, há 16.8 dias nublados no mês de junho (valor esperado).
+  \end{block}
+\end{frame}
 \begin{frame}{Aumentando o tamanho da amostra}
   \begin{itemize}
   \item Quanto maior o tamanho $n$ da amostra, mais ``suave'' a
