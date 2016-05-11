@@ -298,6 +298,33 @@ Os seguintes experimentos são binomiais ou não?
   \end{block}
 \end{frame}
 
+\begin{frame}{Exemplo}
+  \begin{example}
+    Cirurgias de microfraturas no joelho tem 75\% de chance de sucesso em pacientes com joelhos degenerativos.
+    A cirurgia é realizada em 3 pacientes.
+
+    \bigskip
+    Qual é a probabilidade da cirurgia ser bem sucedida em exatamente 2 pacientes?
+  \end{example}
+\end{frame}
+
+\begin{frame}{Exemplo}
+  \begin{block}{Dados}
+    \begin{itemize}
+    \item $n = 3$
+    \item $x = 2$
+    \item $p = 0.75 \Rightarrow q = 0.25$
+    \item $P(x) = \frac{n!}{(n-x)!x!}p^x q^{n-x}$
+    \end{itemize}
+  \end{block}
+  \begin{block}{Resolução}
+    \begin{itemize}
+    \item $P(2) = \frac{3!}{(3-2)!2!}(0.75)^{2} (0.25)^{(3-2)}$
+    \item $P(2) = \frac{6}{(1)(2)}(0.75)^{2} (0.25)^{1} \approx \alert{0.422}$
+    \end{itemize}
+  \end{block}
+\end{frame}
+
 \begin{frame}{A distribuição Binomial}
 \includegraphics[width=\textwidth]{Prob_II/binomial}
 \end{frame}
