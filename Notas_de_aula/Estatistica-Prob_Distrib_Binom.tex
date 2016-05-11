@@ -276,6 +276,19 @@ $x$ & contagem de sucessos\\
 \end{frame}
 
 \begin{frame}{A distribuição Binomial}
+  \begin{block}{Fórmula}
+    \begin{displaymath}
+%      P(x) = \left(^n _x  \right) p^x q^{n-x} = \frac{n!}{(n-x)!x!}p^x q^{n-x}
+      P(x) = \frac{n!}{(n-x)!x!}p^x q^{n-x}
+    \end{displaymath}
+  \end{block}
+\end{frame}
+
+\begin{frame}{A distribuição Binomial}
+\includegraphics[width=\textwidth]{Prob_II/binomial}
+\end{frame}
+
+\begin{frame}{A distribuição Binomial}
   \begin{itemize}
   \item Quando executamos $n$ ensaios de Bernoulli
     \alert{independentes}, encontramos a distribuição Binomial
@@ -284,10 +297,6 @@ $x$ & contagem de sucessos\\
   \item Notação $X \sim Bin(n,p)$
   \item Valor esperado: $E[x]=np$
   \end{itemize}
-\end{frame}
-
-\begin{frame}{A distribuição Binomial}
-\includegraphics[width=\textwidth]{Prob_II/binomial}
 \end{frame}
 
 \begin{frame}{Aumentando o tamanho da amostra}
