@@ -46,7 +46,7 @@
 {Distribuições de Probabilidades}
 
 \subtitle
-{Distribuições de Probabilidades Discretas} % (optional)
+{Distribuições de Probabilidades Binomiais} % (optional)
 
 \author%[] % (optional, use only with lots of authors)
 {Felipe Figueiredo}% \and S.~Another\inst{2}}
@@ -212,14 +212,7 @@
   \end{example}
 \end{frame}
 
-% \begin{frame}{Representação gráfica}
-
-%   \begin{itemize}
-%   \item 
-%   \end{itemize}
-% \end{frame}
-
-\section{Distribuições de Probabilidade}
+\section[Distribuições Discretas]{Distribuições de Probabilidade Discretas}
 \begin{frame}{Distribuições de Probabilidade}
   \begin{definition}
     Uma \alert{distribuição de probabilidade} é um gráfico, tabela ou
@@ -234,33 +227,127 @@
   \end{itemize}
 \end{frame}
 
-\subsection{Distribuições Discretas}
+\subsection{A distribuição binomial}
 
-% \subsection{Bernoulli}
-\begin{frame}{A distribuição de Bernoulli}
+\begin{frame}{A distribuição Binomial}
+  \begin{definition}
+    Um \alert{experimento binomial} é um experimento de probabilidade que possui as seguintes propriedades:
+
+    \begin{itemize}
+    \item O experimento é repetido por um $n$ fixo de tentativas independentes
+    \item Há apenas 2 resultados possíveis em cada tentativa (sucesso e fracasso)
+    \item A probabilidade de sucesso $P(S)$ é a mesma em todas as tentativas
+    \item A variável aleatória $x$ contabiliza o número de sucessos do experimento.
+    \end{itemize}
+  \end{definition}
+
+Fonte: Larson \& Farber, 2010.
+\end{frame}
+
+\begin{frame}{Exercício}
+Os seguintes experimentos são binomiais ou não?
+  \begin{block}{}
+    \begin{enumerate}
+    \item Um tipo de cirurgia tem 85\% de chances de sucesso.
+      Um médico realiza o procedimento em 8 pacientes.
+      A variável aleatória representa o número de cirurgias bem sucedidas.
+    \item Uma jarra contém 5 bolinhas de gude vermelhas, 9 azuis e 6 verdes.
+      Você escolhe 3 bolinhas aleatoriamente sem reposição.
+      A variável aleatória representa o número de bolinhas vermelhas.
+    \end{enumerate}
+  \end{block}
+\end{frame}
+
+\subsection{Probabilidades binomiais}
+
+\begin{frame}{A distribuição Binomial}
+  \begin{block}{Notação}
+    \begin{tabular}{ll}
+      $n$& número de tentativas \\
+$p = P(S)$ & probabilidade de sucesso (por tentativa)\\
+$q = P(F)$ & probabilidade de fracasso (por tentativa)\\
+$x$ & contagem de sucessos\\
+    \end{tabular}
+  \end{block}
+\end{frame}
+
+\begin{frame}{A distribuição Binomial}
+  \begin{block}{Fórmula}
+    \begin{displaymath}
+%      P(x) = \left(^n _x  \right) p^x q^{n-x} = \frac{n!}{(n-x)!x!}p^x q^{n-x}
+      P(x) = \frac{n!}{(n-x)!x!}p^x q^{n-x}
+    \end{displaymath}
+  \end{block}
+
+  \vfill
+  \centering
+  Obs: $n!$ é o \alert{fatorial} de $n$.
+\end{frame}
+
+\begin{frame}{Exemplo}
+  \begin{example}
+    Cirurgias de microfraturas no joelho tem 75\% de chance de sucesso em pacientes com joelhos degenerativos.
+    A cirurgia é realizada em 3 pacientes.
+
+    \bigskip
+    Qual é a probabilidade da cirurgia ser bem sucedida em {\em exatamente} 2 pacientes?
+  \end{example}
+\end{frame}
+
+\begin{frame}{Exemplo}
+  \begin{block}{Dados}
+    \begin{itemize}
+    \item $n = 3$
+    \item $x = 2$
+    \item $p = 0.75 \Rightarrow q = 0.25$
+    \item $P(x) = \frac{n!}{(n-x)!x!}p^x q^{n-x}$
+    \end{itemize}
+  \end{block}
+  \begin{block}{Resolução}
+    \begin{itemize}
+    \item $P(2) = \frac{3!}{(3-2)!2!}(0.75)^{2} (0.25)^{(3-2)}$
+    \item $P(2) = \frac{6}{(1)(2)}(0.75)^{2} (0.25)^{1} \approx \alert{0.422}$
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\subsection{Valor esperado}
+
+\begin{frame}{Valor esperado, variância e DP}
   \begin{itemize}
-  \item Um ensaio de Bernoulli é teste com desfecho 0 ou 1 (negativo
-    ou positivo)
-  \item Probabilidade de sucesso $p$
-  \item Probabilidade de fracasso $1-p$
-  \item Notação: $X \sim Bern(p)$
-  \item Valor esperado: $E[x] = p$
+  \item Média: $\mu = np$
+  \item Variância: $\sigma^2 = npq$
+  \item Desvio Padrão: $\sigma =\sqrt{npq}$
   \end{itemize}
 \end{frame}
 
-% \subsection{Binomial}
-\begin{frame}{A distribuição Binomial}
-  \begin{itemize}
-  \item Quando executamos $n$ ensaios de Bernoulli
-    \alert{independentes}, encontramos a distribuição Binomial
-  \item Com $n$ ensaios (cada um com prob. $p$), temos a contagem $x$
-    de sucessos (desfecho = 1)
-  \item Notação $X \sim Bin(n,p)$
-  \item Valor esperado: $E[x]=np$
-  \end{itemize}
+\begin{frame}{Exemplo}
+  \begin{example}
+    Em uma cidade, cerca de 56\% dos dias são nublados.
+    Encontre o valor esperado de dias nublados no mês de junho.
+  \end{example}
+  \begin{block}{Dados}
+    \begin{itemize}
+    \item $n = 30$
+    \item $p = 0.56, q = 0.44$
+    \end{itemize}
+  \end{block}
+  \begin{block}{Resolução}
+    \begin{displaymath}
+      E[x] = \mu = np = (30)(0.56) = \alert{16.8}
+    \end{displaymath}
+  \end{block}
 \end{frame}
 
-\begin{frame}{A distribuição Binomial}
+\begin{frame}{Exemplo}
+  \begin{block}{Interpretação}
+    Em média, há 16.8 dias nublados no mês de junho (valor esperado).
+  \end{block}
+\end{frame}
+
+\subsection{Representação gráfica}
+
+\begin{frame}{Representação gráfica}
 \includegraphics[width=\textwidth]{Prob_II/binomial}
 \end{frame}
 
