@@ -2,7 +2,7 @@
 title: "Trabalho 2 - Gabarito"
 author: "Felipe Figueiredo"
 date: "June 1, 2016"
-output: html_document
+output: pdf_document
 ---
 
 ```{r, echo = F}
